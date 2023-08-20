@@ -5,8 +5,6 @@ import { useNavigate } from 'react-router-dom';
 import ReactPlayer from 'react-player';
 import "./HomePage.css"
 
-import sunhigh1 from "../components/Background-Video/SunHigh1.mov";
-
 function HomePage() {
   const [currentVideo, setCurrentVideo] = useState(sunhigh1);
   const [user, setUser] = useState(null);
@@ -65,7 +63,7 @@ function HomePage() {
       <Navbar onChange={handleVideoChange} user={user}></Navbar>
       <div className="video-background">
         <ReactPlayer
-          url={currentVideo}
+          url={"https://sone-bg-videos.s3.amazonaws.com/Videos/SunHigh1.mov"}
           playing
           loop
           muted
