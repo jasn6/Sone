@@ -45,6 +45,12 @@ const UserProfile = ({user, email, pfp, setPfp, isOpen, onClose}) => {
       
       const data = await response.json();
 
+      if (data.status !== "ok") {
+        // Check if error is an object with a specific property
+        setError(data.error.message || data.error || "Failed to upload profile picture.");
+      }
+
+
       if (data.status === "ok") {
         // Refresh the profile picture
         setPfp(data.fileUrl);
