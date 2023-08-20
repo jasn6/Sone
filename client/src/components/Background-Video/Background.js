@@ -3,36 +3,10 @@ import "./Background.css";
 import Draggable from "react-draggable";
 import * as AiIcons from "react-icons/ai"
 
-import sunrise2P2 from "./SquirrelPizza.mov"
-import night1 from "./NightRain.mov";
-
-import sunhigh1 from "./SunHigh1.mov";
-import sunhigh2 from "./SunHigh2.mov";
-
-import sunset1 from "./RedSun.mov";
-import sunset2 from "./Sunsetbird.mov";
-import sunset3 from "./Sunsetbird2.mov";
-
-import question1 from "./CampFire.mov";
-import question2 from "./Fish.mov";
-import question3 from "./Street.mov"
-
 import * as TbIcons from "react-icons/tb";
 
-import imgrs2P2 from "./SquirrelPizza.png"
-
-import imgsh1 from "./SunHigh1.png"
-import imgsh2 from "./SunHigh2.png"
-
-import imgredsun from "./RedSun.png"
-import imgssb from "./Sunsetbird.png"
-import imgssb2 from "./Sunsetbird2.png"
-
-import imgNightRain from "./NightRain.png"
-
-import imgCampFire from "./CampFire.png"
-import imgFish from "./Fish.png"
-import imgstreet from "./Street.png"
+const aws_videos = "https://sone-bg-videos.s3.amazonaws.com/Videos"
+const aws_pics = "https://sone-bg-videos.s3.amazonaws.com/Pictures"
 
 function Background({onChange,onClose}) {
     const Time = [false,false,true,false,false,false];
@@ -112,39 +86,39 @@ function Background({onChange,onClose}) {
                 {currentSet.map((isVisible, index) => (
                     <div>
                     {isVisible && index === 0 && <div className="SR">
-                        <button className="options" onClick={() => handleVideoChange(sunhigh1)}><img src="./idk.png" alt="NA"/> </button>
-                        <button className="options"onClick={() => handleVideoChange(sunhigh1)}><img src="./idk.png" alt="NA"/> </button>
-                        <button className="options"onClick={() => handleVideoChange(question2)}><img src="./idk.png" alt="NA"/> </button>
+                        <button className="options" onClick={() => handleVideoChange(aws_videos + "/SunHigh1.mov")}><img src="./idk.png" alt="NA"/> </button>
+                        <button className="options"onClick={() => handleVideoChange(aws_videos + "/SunHigh1.mov")}><img src="./idk.png" alt="NA"/> </button>
+                        <button className="options"onClick={() => handleVideoChange(aws_videos + "/Fish.mov")}><img src="./idk.png" alt="NA"/> </button>
                         </div>}
 
                     {isVisible && index === 1 && <div className="SR2">
-                        <button className="options" onClick={() => handleVideoChange(sunrise2P2)}><img src={imgrs2P2} alt="NA"/> </button>
-                        <button className="options"onClick={() => handleVideoChange(sunhigh2)}><img src="./idk.png" alt="NA"/> </button>
-                        <button className="options"onClick={() => handleVideoChange(question2)}><img src="./idk.png" alt="NA"/> </button>
+                        <button className="options" onClick={() => handleVideoChange(aws_videos+"/SquirrelPizza.mov")}><img src={aws_pics + "/SquirrelPizza.png"} alt="NA"/> </button>
+                        <button className="options"onClick={() => handleVideoChange(aws_videos + "/SunHigh2.mov")}><img src="./idk.png" alt="NA"/> </button>
+                        <button className="options"onClick={() => handleVideoChange(aws_videos + "/Fish.mov")}><img src="./idk.png" alt="NA"/> </button>
                         </div>}
 
                     {isVisible && index === 2 && <div className="SH">
-                        <button className="options" onClick={() => handleVideoChange(sunhigh1)}><img src={imgsh1} alt="SunHigh1"/> </button>
-                        <button className="options"onClick={() => handleVideoChange(sunhigh2)}><img src={imgsh2} alt="SunHigh2"/> </button>
-                        <button className="options"onClick={() => handleVideoChange(sunhigh2)}><img src={imgsh2} alt="SunHigh2"/> </button>
+                        <button className="options" onClick={() => handleVideoChange(aws_videos + "/SunHigh1.mov")}><img src={aws_pics + "/SunHigh1.png"} alt="SunHigh1"/> </button>
+                        <button className="options"onClick={() => handleVideoChange(aws_videos + "/SunHigh2.mov")}><img src={aws_pics + "/SunHigh2.png"} alt="SunHigh2"/> </button>
+                        <button className="options"onClick={() => handleVideoChange(aws_videos + "/SunHigh2.mov")}><img src={aws_pics + "/SunHigh2.png"} alt="SunHigh2"/> </button>
                         </div>}
 
                     {isVisible && index === 3 && <div className="SS">
-                        <button className="options" onClick={() => handleVideoChange(sunset1)}><img src={imgredsun} alt="RedSun"/> </button>
-                        <button className="options"onClick={() => handleVideoChange(sunset2)}><img src={imgssb} alt="SSB"/> </button>
-                        <button className="options"onClick={() => handleVideoChange(sunset3)}><img src={imgssb2} alt="SSB2"/> </button>
+                        <button className="options" onClick={() => handleVideoChange(aws_videos + "/RedSun.mov")}><img src={aws_pics + "/RedSun.png"} alt="RedSun"/> </button>
+                        <button className="options"onClick={() => handleVideoChange(aws_videos + "/Sunsetbird.mov")}><img src={aws_pics+"/Sunsetbird.png"} alt="SSB"/> </button>
+                        <button className="options"onClick={() => handleVideoChange(aws_videos + "/Sunsetbird2.mov")}><img src={aws_pics + "/Sunsetbird2.png"} alt="SSB2"/> </button>
                         </div>}
 
                     {isVisible && index === 4 && <div className="M">
-                        <button className="options" onClick={() => handleVideoChange(night1)}><img src={imgNightRain} alt="NightRain"/> </button>
-                        <button className="options"onClick={() => handleVideoChange(sunhigh1)}><img src="./idk.png" alt="NA"/> </button>
-                        <button className="options"onClick={() => handleVideoChange(question2)}><img src="./idk.png" alt="NA"/> </button>
+                        <button className="options" onClick={() => handleVideoChange(aws_videos + "/NightRain.mov")}><img src={aws_pics + "/NightRain.png"} alt="NightRain"/> </button>
+                        <button className="options"onClick={() => handleVideoChange(aws_videos + "/SunHigh1.mov")}><img src="./idk.png" alt="NA"/> </button>
+                        <button className="options"onClick={() => handleVideoChange(aws_videos + "/Fish.mov")}><img src="./idk.png" alt="NA"/> </button>
                         </div>}
 
                     {isVisible && index === 5 && <div className="hu">
-                        <button className="options" onClick={() => handleVideoChange(question1)}><img src={imgCampFire} alt="Campfire"/> </button>
-                        <button className="options"onClick={() => handleVideoChange(question2)}><img src={imgFish} alt="Fish"/> </button>
-                        <button className="options"onClick={() => handleVideoChange(question3)}><img src={imgstreet} alt="Street"/> </button>
+                        <button className="options" onClick={() => handleVideoChange(aws_videos + "/CampFire.mov")}><img src={aws_pics + "/CampFire.png"} alt="Campfire"/> </button>
+                        <button className="options"onClick={() => handleVideoChange(aws_videos + "/Fish.mov")}><img src={aws_pics + "/Fish.png"} alt="Fish"/> </button>
+                        <button className="options"onClick={() => handleVideoChange(aws_videos + "/Street.mov")}><img src={aws_pics + "/Street.png"} alt="Street"/> </button>
                         </div>}
                     </div>
 
