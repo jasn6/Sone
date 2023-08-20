@@ -260,9 +260,16 @@ class Todo extends React.Component {
 
                                 </div>
 
-                                <div className="addEvent" onClick={() => this.setState({popupActive2: true, newEvent: todo.text})}>
-                                  <BsIcons.BsCalendarEvent></BsIcons.BsCalendarEvent>
-                                </div>
+                                <div 
+                                    className="addEvent" 
+                                    onClick={(e) => {
+                                      e.stopPropagation();
+                                      this.setState({popupActive2: true, newEvent: todo.text});
+                                    }}
+                                  >
+                                    <BsIcons.BsCalendarEvent></BsIcons.BsCalendarEvent>
+                                  </div>
+
                                 
                                 <div className="delete-todo" onClick={() => this.deleteTodo(todo._id)}><BsIcons.BsFillTrash3Fill></BsIcons.BsFillTrash3Fill></div>
                             </div>
