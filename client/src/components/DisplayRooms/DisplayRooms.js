@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { useNavigate } from "react-router-dom";
 import CreateRoomModal from '../CreateRoomModal/CreateRoomModal';
 import './DisplayRoom.css';
-const api_base = "https://sone-study-app.herokuapp.com/api/study-room"
+const api_base = "https://sone-study-app-d94f4d443349.herokuapp.com/api/study-room"
 
 const DisplayRoom = ({rooms, setRooms, isPublic}) => {
   const navigate = useNavigate();

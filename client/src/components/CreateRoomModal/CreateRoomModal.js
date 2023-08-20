@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import './CreateRoomModal.css';
 
-const api_base = "https://sone-study-app.herokuapp.com/api/study-romo"
+const api_base = "https://sone-study-app-d94f4d443349.herokuapp.com/api/study-romo"
 
 // Resuable component for creating and editing a room
 const CreateRoomModal = ({ isOpen, onClose, rooms, setRooms, roomInfo }) => {

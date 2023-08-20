@@ -5,7 +5,7 @@ import { useParams, useNavigate } from "react-router-dom";
 import {io} from "socket.io-client";
 import "./Room.css"
 
-const api_base = "https://sone-study-app.herokuapp.com/api/"
+const api_base = "https://sone-study-app-d94f4d443349.herokuapp.com/api/"
 const Room = () => {
   const [newMessage, setNewMessage] = useState("");
   const [socket, setSocket] = useState(null);
@@ -101,7 +101,7 @@ const Room = () => {
 
   useEffect(() => {
     const initializeSocket = () => {
-      const newSocket = io("http://localhost:3001");
+      const newSocket = io("https://sone-study-app-d94f4d443349.herokuapp.com");
       setSocket(newSocket);
     };
 

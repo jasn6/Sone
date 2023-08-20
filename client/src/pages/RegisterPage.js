@@ -3,7 +3,7 @@ import { useNavigate } from "react-router-dom";
 import "./RegisterPage.css";
 import * as IoIcons from "react-icons/io5";
 
-const api_base = "https://sone-study-app.herokuapp.com/api/"
+const api_base = "https://sone-study-app-d94f4d443349.herokuapp.com/api/"
 
 function RegisterPage() {
   const navigate = useNavigate();

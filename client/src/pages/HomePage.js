@@ -5,7 +5,7 @@ import { useNavigate } from 'react-router-dom';
 import ReactPlayer from 'react-player';
 import "./HomePage.css"
 
-const api_base = "https://sone-study-app.herokuapp.com/api/user/"
+const api_base = "https://sone-study-app-d94f4d443349.herokuapp.com/api/user/"
 
 function HomePage() {
   const [currentVideo, setCurrentVideo] = useState("https://sone-bg-videos.s3.amazonaws.com/Videos/SunHigh1.mov");

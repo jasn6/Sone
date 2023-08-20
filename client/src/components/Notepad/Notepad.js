@@ -4,7 +4,7 @@ import Draggable from 'react-draggable';
 import './Notepad.css';
 import Note from './Note';
 
-const api_base = "https://sone-study-app.herokuapp.com/api/notes";
+const api_base = "https://sone-study-app-d94f4d443349.herokuapp.com/api/notes";
 
 const Notepad = ({ onClose }) => {
   //get the saved notes from the local storage

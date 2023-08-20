@@ -3,7 +3,7 @@ import './RoomModal.css';
 import CreateRoomModal from '../CreateRoomModal/CreateRoomModal';
 import DisplayRoom from '../DisplayRooms/DisplayRooms';
 
-const api_base = "https://sone-study-app.herokuapp.com/api/study-room"
+const api_base = "https://sone-study-app-d94f4d443349.herokuapp.com/api/study-room"
 
 const RoomModal = ({ isOpen, onClose }) => {
   const [rooms, setRooms] = useState([]);

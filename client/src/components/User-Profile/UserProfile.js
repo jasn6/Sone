@@ -1,7 +1,7 @@
 import React, {useState} from "react";
 import "./userProfile.css"; // Import the CSS file for styling
 //API
-const api_base = "https://sone-study-app.herokuapp.com/api/"
+const api_base = "https://sone-study-app-d94f4d443349.herokuapp.com/api/"
 
 const UserProfile = ({user, email, pfp, setPfp, isOpen, onClose}) => {
   const [selectedFile, setSelectedFile] = useState(null);

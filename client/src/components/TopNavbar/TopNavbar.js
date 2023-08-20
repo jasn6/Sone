@@ -3,7 +3,7 @@ import { useNavigate } from "react-router-dom";
 import './TopNavbar.css';
 import RoomModal from "../RoomModal/RoomModal";
 
-const api_base = "https://sone-study-app.herokuapp.com/api/study-room"
+const api_base = "https://sone-study-app-d94f4d443349.herokuapp.com/api/study-room"
 const TopNavbar = ({currRoom}) => {
   const navigate = useNavigate();
   const [isModalOpen, setIsModalOpen] = useState(false);

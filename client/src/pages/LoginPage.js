@@ -2,7 +2,7 @@ import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import "./LoginPage.css";
 
-const api_base = "https://sone-study-app.herokuapp.com/api/"
+const api_base = "https://sone-study-app-d94f4d443349.herokuapp.com/api/"
 
 function LoginPage() {
   const navigate = useNavigate();
