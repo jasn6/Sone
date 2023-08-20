@@ -49,12 +49,13 @@ const UserProfile = ({user, email, pfp, setPfp, isOpen, onClose}) => {
         // Refresh the profile picture
         setPfp(data.fileUrl);
       } else {
-        setError(data.error || "Failed to upload profile picture.");
+        setError(data.error.message || "Failed to upload profile picture.");
       }
     } catch (err) {
-      console.error("Error uploading image:", err);
-      setError("An error occurred while uploading the image.");
-    }
+        console.error("Error uploading image:", err);
+        setError(err.message || "An error occurred while uploading the image."); // Use 'err.message'
+      }
+
   };
 
 
