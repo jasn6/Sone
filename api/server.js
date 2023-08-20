@@ -3,6 +3,7 @@ const mongoose = require("mongoose");
 const cors = require("cors");
 const allRoutes = require('./routes/index.js');
 const cookieParser = require('cookie-parser');
+const path = require('path');
 
 require('dotenv').config();
 /*
@@ -20,9 +21,18 @@ app.use(cors({ credentials: true, origin: true }));
 app.use(cookieParser());
 app.use('/uploads', express.static('uploads'));
 
-app.get('/', (req, res) => {
-    res.send('Welcome to the Sone Study App API!');
-});
+if (process.env.NODE_ENV === 'production') {
+  // Set static folder
+  app.use(express.static('client/build')); // Ensure this path corresponds to your React app's directory
+
+  app.get('*', (req, res) => {
+    res.sendFile(path.resolve(__dirname, 'client', 'build', 'index.html'));
+  });
+} else {
+    app.get('/', (req, res) => {
+        res.send('Welcome to the Sone Study App API!');
+    });
+}
 
 // Routes
 app.use('/api', allRoutes); 
