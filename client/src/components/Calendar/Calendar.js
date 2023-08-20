@@ -6,7 +6,7 @@ import interactionPlugin from '@fullcalendar/interaction';
 import Draggable from 'react-draggable';
 import './Calendar.css';
 import * as AiIcons from "react-icons/ai"
-const api_base = 'http://localhost:3001/api/event';
+const api_base = "https://sone-study-app.herokuapp.com/api/event"
 
 function Calendar({onClose}) {
     const calendarWidth = 400; // You can adjust this width based on your design

@@ -4,6 +4,8 @@ import ChatIcon from '@mui/icons-material/Chat';
 import { useParams, useNavigate } from "react-router-dom";
 import {io} from "socket.io-client";
 import "./Room.css"
+
+const api_base = "https://sone-study-app.herokuapp.com/api/"
 const Room = () => {
   const [newMessage, setNewMessage] = useState("");
   const [socket, setSocket] = useState(null);
@@ -21,7 +23,7 @@ const Room = () => {
   const sendMessage = async (event) => {
     if (event.key === "Enter" && newMessage) {
       try {
-        const response = await fetch("http://localhost:3001/api/message",{
+        const response = await fetch(api_base+"message",{
           method: "POST",
           headers: {
           "Content-Type": "application/json",
@@ -44,7 +46,7 @@ const Room = () => {
 
   const fetchMessages = async () => {
     try {
-      const response = await fetch(`http://localhost:3001/api/message/${roomCode}`,{
+      const response = await fetch(api_base+`message/${roomCode}`,{
         headers: {
         "Content-Type": "application/json",
         },
@@ -60,7 +62,7 @@ const Room = () => {
 
   const getRoomInfo = async () => {
     try {
-      const response = await fetch(`http://localhost:3001/api/study-room/${roomCode}`,{
+      const response = await fetch(api_base+`study-room/${roomCode}`,{
         headers: {
         "Content-Type": "application/json",
         },

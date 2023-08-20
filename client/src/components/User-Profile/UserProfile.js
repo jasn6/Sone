@@ -1,6 +1,7 @@
 import React, {useState} from "react";
 import "./userProfile.css"; // Import the CSS file for styling
 //API
+const api_base = "https://sone-study-app.herokuapp.com/api/"
 
 const UserProfile = ({user, email, pfp, setPfp, isOpen, onClose}) => {
   const [selectedFile, setSelectedFile] = useState(null);
@@ -36,7 +37,7 @@ const UserProfile = ({user, email, pfp, setPfp, isOpen, onClose}) => {
     formData.append('profilePic', selectedFile);
 
     try {
-      const response = await fetch("http://localhost:3001/api/user/uploadPfp", {
+      const response = await fetch(api_base+"user/uploadPfp", {
         method: 'POST',
         body: formData,
         credentials: 'include',
@@ -59,7 +60,7 @@ const UserProfile = ({user, email, pfp, setPfp, isOpen, onClose}) => {
 
   const logoutUser = async () => {
      try {
-      const response = await fetch("http://localhost:3001/api/auth/logout", {
+      const response = await fetch(api_base+"/auth/logout", {
         headers: {
           "Content-Type": "application/json",
         },

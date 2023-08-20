@@ -1,6 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import './CreateRoomModal.css';
 
+const api_base = "https://sone-study-app.herokuapp.com/api/study-romo"
+
 // Resuable component for creating and editing a room
 const CreateRoomModal = ({ isOpen, onClose, rooms, setRooms, roomInfo }) => {
   const [roomName, setRoomName] = useState('');
@@ -17,7 +19,7 @@ const CreateRoomModal = ({ isOpen, onClose, rooms, setRooms, roomInfo }) => {
 
   const createRoom = async () => {
     try {
-      const res = await fetch('http://localhost:3001/api/study-room/create', {
+      const res = await fetch(api_base+'/create', {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -42,7 +44,7 @@ const CreateRoomModal = ({ isOpen, onClose, rooms, setRooms, roomInfo }) => {
 
   const updateRoom = async () => {
     try {
-      const res = await fetch(`http://localhost:3001/api/study-room/${roomInfo._id}`, {
+      const res = await fetch(api_base+`/${roomInfo._id}`, {
         method: "PUT",
         headers: {
           "Content-Type": "application/json",

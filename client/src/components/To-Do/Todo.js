@@ -11,8 +11,8 @@ import * as BsIcons from "react-icons/bs"
 import * as HiIcons from "react-icons/hi"
 import * as MdIcons from "react-icons/md"
 //API
-const api_base = 'http://localhost:3001/api/todos';
-const api_base2 = 'http://localhost:3001/api/event';
+const api_base = "https://sone-study-app.herokuapp.com/api/todos"
+const api_base2 = "https://sone-study-app.herokuapp.com/api/event"
 
 class Todo extends React.Component {
   constructor(props) {

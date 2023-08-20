@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { useNavigate } from "react-router-dom";
 import CreateRoomModal from '../CreateRoomModal/CreateRoomModal';
 import './DisplayRoom.css';
+const api_base = "https://sone-study-app.herokuapp.com/api/study-room"
 
 const DisplayRoom = ({rooms, setRooms, isPublic}) => {
   const navigate = useNavigate();
@@ -10,7 +11,7 @@ const DisplayRoom = ({rooms, setRooms, isPublic}) => {
   
   const handleJoin = async (roomId) => {
     try {
-      const res = await fetch(`http://localhost:3001/api/study-room/joinedRoom/${roomId}`, {
+      const res = await fetch(api_base+`/joinedRoom/${roomId}`, {
         method: "PUT",
         headers: {
           'Content-Type': 'application/json',
@@ -37,7 +38,7 @@ const DisplayRoom = ({rooms, setRooms, isPublic}) => {
 
   const handleEdit = async (roomId) => {
     try {
-      const res = await fetch(`http://localhost:3001/api/study-room/${roomId}`, {
+      const res = await fetch(api_base+`/${roomId}`, {
         headers: {
           'Content-Type': 'application/json',
         },
@@ -54,7 +55,7 @@ const DisplayRoom = ({rooms, setRooms, isPublic}) => {
 
   const handleDelete = async (roomId) => {
     try {
-      await fetch(`http://localhost:3001/api/study-room/delete/${roomId}`, {
+      await fetch(api_base+`/delete/${roomId}`, {
         method: "DELETE",
         headers: {
           'Content-Type': 'application/json',

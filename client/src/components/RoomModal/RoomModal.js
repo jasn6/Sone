@@ -3,6 +3,8 @@ import './RoomModal.css';
 import CreateRoomModal from '../CreateRoomModal/CreateRoomModal';
 import DisplayRoom from '../DisplayRooms/DisplayRooms';
 
+const api_base = "https://sone-study-app.herokuapp.com/api/study-room"
+
 const RoomModal = ({ isOpen, onClose }) => {
   const [rooms, setRooms] = useState([]);
   const [selectedTab, setSelectedTab] = useState('myRooms');
@@ -14,7 +16,7 @@ const RoomModal = ({ isOpen, onClose }) => {
 
   const fetchRooms = async () => {
     try {
-      const res = await fetch('http://localhost:3001/api/study-room', {
+      const res = await fetch(api_base, {
         headers: {
           "Content-Type": "application/json",
         },
@@ -29,7 +31,7 @@ const RoomModal = ({ isOpen, onClose }) => {
 
    const fetchPublicRooms = async () => {
     try {
-      const res = await fetch('http://localhost:3001/api/study-room/public', {
+      const res = await fetch(api_base+'/public', {
         headers: {
           "Content-Type": "application/json",
         },

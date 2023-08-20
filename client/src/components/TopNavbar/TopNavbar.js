@@ -3,6 +3,7 @@ import { useNavigate } from "react-router-dom";
 import './TopNavbar.css';
 import RoomModal from "../RoomModal/RoomModal";
 
+const api_base = "https://sone-study-app.herokuapp.com/api/study-room"
 const TopNavbar = ({currRoom}) => {
   const navigate = useNavigate();
   const [isModalOpen, setIsModalOpen] = useState(false);
@@ -13,7 +14,7 @@ const TopNavbar = ({currRoom}) => {
 
   const handleLeaveRoom = async () => {
       try {
-      const res = await fetch(`http://localhost:3001/api/study-room/leaveRoom/${currRoom._id}`, {
+      const res = await fetch(api_base+`/leaveRoom/${currRoom._id}`, {
         method: "PUT",
         headers: {
           'Content-Type': 'application/json',

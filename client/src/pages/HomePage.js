@@ -5,6 +5,8 @@ import { useNavigate } from 'react-router-dom';
 import ReactPlayer from 'react-player';
 import "./HomePage.css"
 
+const api_base = "https://sone-study-app.herokuapp.com/api/user/"
+
 function HomePage() {
   const [currentVideo, setCurrentVideo] = useState("https://sone-bg-videos.s3.amazonaws.com/Videos/SunHigh1.mov");
   const [user, setUser] = useState(null);
@@ -14,7 +16,7 @@ function HomePage() {
 
   async function populateUserInfo() {
     try {
-      const req = await fetch("http://localhost:3001/api/user/profile", {
+      const req = await fetch(api_base + "profile", {
         headers: {
           "Content-Type": "application/json",
         },
