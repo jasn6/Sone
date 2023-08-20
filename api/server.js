@@ -21,6 +21,13 @@ app.use(cors({ credentials: true, origin: true }));
 app.use(cookieParser());
 app.use('/uploads', express.static('uploads'));
 
+// Routes
+app.use('/api', allRoutes); 
+/* Whenever we want to access the backend through
+   the frontend use this endpoint format: 
+   "/api/<model>/<typeofReuqest, ex: getallTasks>"
+*/
+
 if (process.env.NODE_ENV === 'production') {
   // Set static folder
   app.use(express.static('client/build')); // Ensure this path corresponds to your React app's directory
@@ -33,13 +40,6 @@ if (process.env.NODE_ENV === 'production') {
         res.send('Welcome to the Sone Study App API!');
     });
 }
-
-// Routes
-app.use('/api', allRoutes); 
-/* Whenever we want to access the backend through
-   the frontend use this endpoint format: 
-   "/api/<model>/<typeofReuqest, ex: getallTasks>"
-*/
 
 mongoose
   .connect(process.env.MONGO_URI, {

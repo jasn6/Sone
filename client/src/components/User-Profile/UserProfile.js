@@ -60,7 +60,7 @@ const UserProfile = ({user, email, pfp, setPfp, isOpen, onClose}) => {
 
   const logoutUser = async () => {
      try {
-      const response = await fetch(api_base+"/auth/logout", {
+      const response = await fetch(api_base+"auth/logout", {
         headers: {
           "Content-Type": "application/json",
         },
