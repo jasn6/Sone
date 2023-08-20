@@ -26,5 +26,15 @@
     "socket.io-client": "^4.7.1",
     "styled-components": "^6.0.4",
     "svg-to-dataurl": "^1.0.0"
+  },
+  "scripts": {
+    "start": "node server.js",
+    "heroku-postbuild": "cd client && npm install && npm run build"
+  },
+
+  "engines": {
+    "node": "18.16.0"
   }
+
+
 }

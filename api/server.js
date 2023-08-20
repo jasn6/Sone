@@ -35,7 +35,11 @@ mongoose
   .then(() => console.log("Connected to DB"))
   .catch(console.error);
 
-const server = app.listen(3001, () => console.log("Server started on port 3001"));
+  const PORT = process.env.PORT || 3001;
+
+const server = app.listen(PORT, () => {
+  console.log(`Server is running on port ${PORT}`);
+});
 
 const io = require("socket.io")(server, {
   cors: {
