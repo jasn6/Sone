@@ -52,10 +52,14 @@ router.get("/profile", async (req, res) => {
 
 
 router.post("/uploadPfp", (req, res) => {
+  console.log("Entered uploadPfp endpoint");
   upload(req, res, async (err) => {
     if (err) {
+      console.error("Error in multer:", err);
       return res.status(500).json({ error: err });
     }
+
+    console.log("Upload to S3 was successful, file URL:", req.file.location);
 
     const fileUrl = req.file.location;
 
@@ -67,14 +71,19 @@ router.post("/uploadPfp", (req, res) => {
       );
 
       if (!user) {
+        console.error("User not found for email:", req.user.email);
         return res.status(404).json({ error: 'User not found' });
       }
+
+      console.log("Database update was successful, updated user:", user);
 
       res.json({ status: 'ok', fileUrl });
 
     } catch (error) {
-      res.status(500).json({ error });
+      console.error("Error in DB operation:", error);
+      res.status(500).json({ error: error.message });
     }
+
   });
 });
 
